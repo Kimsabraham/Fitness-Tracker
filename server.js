@@ -40,11 +40,13 @@ app.get("/api/workouts", (req, res) => {
 });
 
 app.put("/api/workouts/:id", (req, res) => {
-  db.Workout.findByIdAndUpdate(req.params.id, { exercises: req.body }).then(
-    (data) => {
-      res.json(data);
-    }
-  );
+  db.Workout.findByIdAndUpdate(
+    req.params.id,
+    { $push: { exercises: req.body } },
+    { new: true, runValidators: true }
+  ).then((data) => {
+    res.json(data);
+  }).catch((err) => res.json(err));
 });
 
 app.post("/api/workouts", (req, res) => {
@@ -59,9 +61,9 @@ app.get("/api/workouts/range", (req, res) => {
     .limit(10)
     .then((data) => {
       res.json(data);
-    });
+    })
+    .catch((err) => res.json(err));
 });
-
 
 app.listen(PORT, () => {
   console.log(`Were listening ${PORT}!`);
