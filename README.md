@@ -21,5 +21,5 @@ The following project is under MIT license.
 # Tests
 None
 # Questions
-![image](![Capture](https://user-images.githubusercontent.com/75137165/123012115-a9f32380-d38f-11eb-9f85-e2634b3f2a1a.PNG)
+[Capture](https://user-images.githubusercontent.com/75137165/123012115-a9f32380-d38f-11eb-9f85-e2634b3f2a1a.PNG)
 For any questions please contact,GitHub: Kimsabraham or email  kimsabraham@gmail.com.
