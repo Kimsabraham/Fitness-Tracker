@@ -11,6 +11,7 @@ This app allows the user to track their fitness journey, it uses mongoDB as a da
 * [Questions](#questions)
 # Installation
 NPM I in install all dependencies
+Node.JS, Express, and MongoDB.
 # Usage
 Track your fitness progress 
 # License
