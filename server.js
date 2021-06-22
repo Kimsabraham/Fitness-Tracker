@@ -34,7 +34,9 @@ app.get("/exercise", (req, res) => {
 /// API routes
 
 app.get("/api/workouts", (req, res) => {
-  db.Workout.find({}).then((data) => {
+  db.Workout.aggregate([
+    { $addFields: { totalDuration: { $sum: "$exercises.duration" } } },
+  ]).then((data) => {
     res.json(data);
   });
 });
@@ -44,9 +46,11 @@ app.put("/api/workouts/:id", (req, res) => {
     req.params.id,
     { $push: { exercises: req.body } },
     { new: true, runValidators: true }
-  ).then((data) => {
-    res.json(data);
-  }).catch((err) => res.json(err));
+  )
+    .then((data) => {
+      res.json(data);
+    })
+    .catch((err) => res.json(err));
 });
 
 app.post("/api/workouts", (req, res) => {
