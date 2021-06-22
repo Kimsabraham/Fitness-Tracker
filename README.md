@@ -1,7 +1,7 @@
 # Fitness-Tracker
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/undefined/undefined)
 # Description
-This app allows the user to track their fitness journey, it uses mongoDB as a database for the user to stor their results and information.
+This app allows the user to track their fitness journey, it uses mongoDB as a database for the user to store their results and information.
 # Table of Contents 
 * [Installation](#installation)
 * [Usage](#usage)
@@ -11,9 +11,8 @@ This app allows the user to track their fitness journey, it uses mongoDB as a da
 * [Questions](#questions)
 # Installation
 NPM I in install all dependencies
-such as express
 # Usage
-​Take and save notes hosted from heroku. 
+Track your fitness progress 
 # License
 The following project is under MIT license.
 # Contributing
