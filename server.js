@@ -33,13 +33,13 @@ app.get("/exercise", (req, res) => {
 
 /// API routes
 
-app.get("/api/workout", (req, res) => {
+app.get("/api/workouts", (req, res) => {
   db.Workout.find({}).then((data) => {
     res.json(data);
   });
 });
 
-app.put("/api/workout/:id", (req, res) => {
+app.put("/api/workouts/:id", (req, res) => {
   db.Workout.findByIdAndUpdate(req.params.id, { exercises: req.body }).then(
     (data) => {
       res.json(data);
@@ -47,13 +47,13 @@ app.put("/api/workout/:id", (req, res) => {
   );
 });
 
-app.post("/api/workout", (req, res) => {
+app.post("/api/workouts", (req, res) => {
   db.Workout.create({}).then((data) => {
     res.json(data);
   });
 });
 
-app.get("/api/workout/range", (req, res) => {
+app.get("/api/workouts/range", (req, res) => {
   db.Workout.find({})
     .sort({ day: -1 })
     .limit(10)
