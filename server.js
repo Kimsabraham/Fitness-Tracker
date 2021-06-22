@@ -61,9 +61,6 @@ app.get("/api/workout/range", (req, res) => {
       res.json(data);
     });
 });
-.catch((err) => res.json(err));
-
-
 
 
 app.listen(PORT, () => {
