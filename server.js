@@ -60,7 +60,9 @@ app.post("/api/workouts", (req, res) => {
 });
 
 app.get("/api/workouts/range", (req, res) => {
-  db.Workout.find({})
+  db.Workout.aggregate([
+    { $addFields: { totalDuration: { $sum: "$exercises.duration" } } },
+  ])
     .sort({ day: -1 })
     .limit(10)
     .then((data) => {
